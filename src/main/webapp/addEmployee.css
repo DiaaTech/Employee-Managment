@@ -1,0 +1,14 @@
+body {
+  background-color: #b3e6fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  margin-top: 60px;
+}
+h1 {
+  font-size: 60px;
+  color: #1151ff;
+  border-bottom: 4px solid rgb(255, 77, 77);
+}
