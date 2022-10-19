@@ -39,7 +39,6 @@ public class ViewAllEmployee extends HttpServlet {
 				    out.print( "<h2>Employee Id:"+ list.get(i).id+"</h2>");
 				    out.print( "<h2>Salary:"+ list.get(i).salary+"</h2>");
 				    out.print( "<h2>Address:"+ list.get(i).address+"</h2>");
-				    out.print("  <a href=\"\">Delete</a>");
 				    out.print("</div>\n");
 			
 		}

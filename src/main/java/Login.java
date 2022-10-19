@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		
@@ -24,7 +23,7 @@ public class Login extends HttpServlet {
 			Database dbDatabase = new Database();
 			boolean status = dbDatabase.login(userName, password);
 			if(status) {
-				response.sendRedirect("viewAll");
+				response.sendRedirect("main.html");
 			}
 			else {
 				response.sendRedirect("error.html");		// it takes user at other page/servlet

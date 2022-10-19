@@ -49,9 +49,45 @@ public class Database {
 		return list;
 		
 	}
+	// Insert New Employee
+	void addEmployee(Employee employee) throws SQLException {
+	
+		String queryString = "insert into employee (id, name, age, address, salary) values (?, ?, ?, ?, ?);";
+		PreparedStatement pr = con.prepareStatement(queryString);
+		
+		
+		pr.setInt(1, employee.id);
+		pr.setString(2, employee.name);
+		pr.setInt(3, employee.age);
+		pr.setString(4, employee.address);
+		pr.setInt(5, employee.salary);
+
+		pr.executeUpdate();
+	}
 	
 	// Deletion
+	void deleteEmployee(int id) throws SQLException {
+		String queryString = "delete from employee where id = ?";
+		PreparedStatement pr = con.prepareStatement(queryString);
+		pr.setInt(1, id);
+		pr.executeUpdate();
+		
+	}
 	// Edit | Update Data
-	// Insert New Employee
+	
+	void updateEmployee(int id, String name, String address, int age, int salary) throws SQLException {
+		
+		String query = "update employee set name = ?, age = ?, address = ?, salary = ? where id = ?";
+		PreparedStatement pr = con.prepareStatement(query);
+		
+		pr.setString(1, name);
+		pr.setInt(2, age);
+		pr.setString(3, address);
+		pr.setInt(4, salary);
+		pr.setInt(5, id);
+		
+		
+		pr.executeUpdate();
+	}
 	
 }
