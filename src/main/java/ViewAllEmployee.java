@@ -15,6 +15,14 @@ public class ViewAllEmployee extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		HttpSession session = request.getSession(false);
+		
+		//String check = (String) session.getAttribute("login");
+		
+		if(session != null) {
+			
+	
 		try {
 		Database dbDatabase = new Database();
 		ArrayList<Employee> list = dbDatabase.getAllEmployees();
@@ -49,6 +57,10 @@ public class ViewAllEmployee extends HttpServlet {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+		}
+		}
+		else {
+			response.sendRedirect("error.html");
 		}
 	}
 
